@@ -20,7 +20,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
           [ngStyle]="{
             borderBottomColor: playlist.color
           }"
-          (click)="select(playlist)"
+          [routerLink]="[playlist.id]"
         >
           <td>{{ i + 1 }}</td>
           <td>{{ playlist.name }}</td>

@@ -9,6 +9,10 @@ export class PlaylistsService {
     return this.playlists;
   }
 
+  getPlaylist(id) {
+    return this.playlists.find(playlist => playlist.id === id);
+  }
+
   savePlaylist(playlist) {
     if (playlist.id) {
       let index = this.playlists.findIndex((oldPlaylist) => (

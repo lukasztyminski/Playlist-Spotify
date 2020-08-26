@@ -8,6 +8,8 @@ import { AlbumSearchFormComponent } from './album-search-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routerModule } from './music-search.routing';
+import { AlbumDetailsComponent } from './album-details.component';
+import { TrackListComponent } from './track-list.component';
 
 @NgModule({
   imports: [
@@ -17,7 +19,7 @@ import { routerModule } from './music-search.routing';
     ReactiveFormsModule,
     routerModule
   ],
-  declarations: [MusicSearchComponent, AlbumListComponent, AlbumCardComponent, AlbumSearchFormComponent],
+  declarations: [MusicSearchComponent, AlbumListComponent, AlbumCardComponent, AlbumSearchFormComponent, AlbumDetailsComponent, TrackListComponent],
   exports: [MusicSearchComponent],
   providers: [MusicSearchService]
 })
