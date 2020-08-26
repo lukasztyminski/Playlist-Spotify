@@ -12,7 +12,7 @@ export class AppComponent {
   title = 'Playlists Spotify by TymonDev';
 
   constructor(private http: Http, private auth: AuthService) {
-    this.http.get('https://api.spotify.com/v1/search?type=album&query=metallica').subscribe(response => console.log(response.json()))
+
   }
 
 }

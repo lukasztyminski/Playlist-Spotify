@@ -5,12 +5,15 @@ import { AlbumListComponent } from './album-list.component';
 import { AlbumCardComponent } from './album-card.component';
 import { MusicSearchService } from './music-search.service';
 import { AlbumSearchFormComponent } from './album-search-form.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    HttpModule,
+    ReactiveFormsModule
   ],
   declarations: [MusicSearchComponent, AlbumListComponent, AlbumCardComponent, AlbumSearchFormComponent],
   exports: [MusicSearchComponent],
