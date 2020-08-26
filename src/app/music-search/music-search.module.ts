@@ -7,13 +7,15 @@ import { MusicSearchService } from './music-search.service';
 import { AlbumSearchFormComponent } from './album-search-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { routerModule } from './music-search.routing';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     HttpModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    routerModule
   ],
   declarations: [MusicSearchComponent, AlbumListComponent, AlbumCardComponent, AlbumSearchFormComponent],
   exports: [MusicSearchComponent],

@@ -9,11 +9,13 @@ import { PlaylistDetailComponent } from './playlist-detail.component';
 import { PlaylistsService } from './playlists.service';
 
 import playlistsData from './playlists.data';
+import { routerModule } from './playlists.routing';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    routerModule
   ],
   declarations: [PlaylistsComponent, ContentCardComponent,
     PlaylistFormComponent,

@@ -5,14 +5,11 @@ import { Component, OnInit, Input } from '@angular/core';
   template: `
     <img class="card-img-top" [src]="image.url" />
     <div class="card-img-overlay">
-      <div class="card-body">
-        <h5 class="card-title">{{album.name}}</h5>
-      </div>
+      <h5 class="card-title">{{album.name}}</h5>
     </div>
   `,
   styles: [`
     :host() {
-      flex: 0 0 31% !important;
       overflow: hidden;
       cursor: pointer;
       margin: 0 0 20px 0 !important;
@@ -27,7 +24,11 @@ import { Component, OnInit, Input } from '@angular/core';
       top: 70%;
       color: #fff;
       transition: .3s;
+    }
+
+    .card-title {
       font-size: 1em !important;
+      margin-bottom: 0;
     }
   `]
 })

@@ -1,7 +1,10 @@
 <div class="row mt-1">
   <div class="col">
-    <h4>Playlisty</h4>
-
+    <h4 class="display-3 float-sm-right mb-2">Twoje Playlisty</h4>
+  </div>
+</div>
+<div class="row mt-1">
+  <div class="col">
     <playlist-list
       (selected)="select($event)"
       [playlists]="playlists"

@@ -4,7 +4,7 @@ import { MusicSearchService } from './music-search.service';
 @Component({
   selector: 'album-list',
   template: `
-  <div class="card-deck card-deck-justify">
+  <div class="card-columns mt-2">
     <album-card [album]="album"  class="card" *ngFor="let album of albums | async">
     </album-card>
   </div>

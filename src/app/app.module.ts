@@ -4,14 +4,20 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { PlaylistsModule } from './playlists/playlists.module';
+import { routerModule } from './app.routing';
+
 import { AuthService } from './auth.service';
+
+import { PlaylistsModule } from './playlists/playlists.module';
 import { MusicSearchModule } from './music-search/music-search.module';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -19,6 +25,7 @@ import { MusicSearchModule } from './music-search/music-search.module';
     HttpModule,
     PlaylistsModule,
     MusicSearchModule,
+    routerModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
