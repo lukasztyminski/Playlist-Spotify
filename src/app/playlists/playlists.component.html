@@ -5,17 +5,10 @@
     </content-card>
   </div>
   <div class="col">
-    <playlist-list
-      (selected)="select($event)"
-      [playlists]="playlists"
-      [selected]="selected"
-    ></playlist-list>
+    <playlist-list [playlists]="playlists"></playlist-list>
 
     <div class="form-group">
-      <button
-        class="btn btn-success float-sm-right"
-        (click)="createNew($event)"
-      >
+      <button class="btn btn-success float-sm-right" (click)="createNew()">
         Nowa Playlista
       </button>
     </div>

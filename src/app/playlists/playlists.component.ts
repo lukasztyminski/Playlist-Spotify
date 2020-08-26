@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { PlaylistsService } from './playlists.service'
 import playlistsData from './playlists.data';
@@ -10,43 +11,18 @@ import playlistsData from './playlists.data';
 })
 export class PlaylistsComponent implements OnInit {
 
-  selected = null;
-
-  mode = 'none';
-
-  edited = {
-  };
-
   playlists = [];
 
-  constructor(private playlistService: PlaylistsService) {
-    console.log('PlaylistService', this);
+  constructor(private playlistsService: PlaylistsService, private router: Router) {
   }
 
   ngOnInit() {
-    this.playlists = this.playlistService.getPlaylists();
-  }
-
-  select(playlist) {
-    this.mode = 'selected';
-    this.selected = playlist;
-  }
-
-  edit(playlist) {
-    this.mode = 'edit';
-    this.edited = Object.assign({}, playlist);
-    this.selected = playlist;
+    this.playlists = this.playlistsService.getPlaylists();
   }
 
   createNew() {
-    this.mode = 'edit';
-    let newPlaylist = this.playlistService.createPlaylist();
-    this.selected = newPlaylist;
-    this.edited = newPlaylist;
-  }
-
-  save(playlist) {
-    this.playlistService.savePlaylist(playlist);
+    this.playlistsService.createPlaylist();
+    this.router.navigate(['playlists', 'new'])
   }
 
 
