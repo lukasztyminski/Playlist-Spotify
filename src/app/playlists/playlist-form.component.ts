@@ -1,57 +1,31 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PlaylistsService } from './playlists.service';
 
 @Component({
   selector: 'playlist-form',
-  template: `
-   <div class="card-body" *ngIf="playlist">
-      <div class="form-group">
-        <label>Nazwa:</label>
-        <input
-          type="text"
-          [(ngModel)]="playlist.name"
-          class="form-control"
-        />
-      </div>
-      <div class="form-group">
-        <label>Tracks:</label>
-        <input
-          type="text"
-          [value]="playlist.tracks + ' utworów'"
-          disabled
-          class="form-control"
-        />
-      </div>
-      <div class="form-group">
-        <label>Kolor:</label>
-        <input type="color" [(ngModel)]="playlist.color" />
-      </div>
-      <div class="form-group">
-        <label>
-          <input type="checkbox" [(ngModel)]="playlist.favorite" />
-          Ulubiona</label
-        >
-      </div>
-
-      <div class="form-group">
-        <button
-          class="btn btn-success float-sm-right"
-          (click)="save(playlist)"
-        >
-          Zapisz
-        </button>
-      </div>
-    </div>
-
-  `,
-  styles: []
+  templateUrl: './playlist-form.component.html',
+  styles: [`
+    input.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid,
+    input.ng-touched.ng-invalid, textarea.ng-touched.ng-invalid {
+      border: 1px solid red;
+    }
+  `]
 })
 export class PlaylistFormComponent implements OnInit {
 
   playlist;
 
-  save(playlist) {
+  categories = [
+    'Filmowa',
+    'Rockowa',
+    'Inne'
+  ]
+
+  save(valid, playlist) {
+    if (!valid) {
+      return;
+    }
     this.playlistsService.savePlaylist(playlist);
     this.router.navigate(['playlists', playlist.id])
   }
